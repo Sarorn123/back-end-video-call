@@ -6,8 +6,8 @@ const app = express();
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
 	cors: {
-		origin: "http://localhost:3000"
-		// origin: "https://sparkling-kashata-d148ad.netlify.app"
+		// origin: "http://localhost:3000"
+		origin: "https://sparkling-kashata-d148ad.netlify.app"
 	}
 });
 
