@@ -10,6 +10,11 @@ const io = new Server(httpServer, {
 	}
 });
 
+app.get("/", (req, res) => {
+
+	res.send("running")
+})
+
 io.on("connection", (socket) => {
 	socket.on("join-room", (room, user_id) => {
 		socket.join(room);
@@ -25,6 +30,6 @@ io.on("connection", (socket) => {
 	});
 });
 
-httpServer.listen(8000, () => {
+httpServer.listen(process.env.PORT || 8000, () => {
 	console.log("server running on port " + 8000);
 });
